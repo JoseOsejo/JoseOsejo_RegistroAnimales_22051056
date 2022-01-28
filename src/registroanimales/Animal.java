@@ -17,7 +17,7 @@ public class Animal
     private String alimentacion;
     private String descripcionRasgos;
     private String distribucionGeografica;
-    private int vida;//debe ser mayor a cero
+    int vida;//debe ser mayor a cero
 
     public Animal(String nombreCientifico, String nombreComun, String habitat, String alimentacion, String descripcionRasgos, String distribucionGeografica, int vida) {
         this.nombreCientifico = nombreCientifico;
