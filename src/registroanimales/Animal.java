@@ -98,7 +98,7 @@ public class Animal
                 + ", distribucionGeografica=" + distribucionGeografica 
                 + ", vida=" + vida + '}';
     }
-    
+    //eliminarse (por nombre científico) y editarse
     
     
 }
