@@ -16,13 +16,22 @@ public class RegistroAnimales {
 
     public static ArrayList<Animal> lista = new ArrayList();
     public static Scanner sc = new Scanner(System.in);
-    public static Animal animal = new Animal();
+    public static Animal ani = new Animal();
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Animal animal1 = new Animal("ObotusPatrus", "Conejo", "Tierra", "Pastel", "Feroz", "Africa", 2);
+        Animal animal2 = new Animal("PatrisFabiola", "Raton", "Casas", "Pastel de queso", "Veloz", "Argentina", 4);
+        Animal animal3 = new Animal("OtrisPanicro", "Dinosaurio", "Cuevas", "Pastel de Carne", "Tranquilo", "Honduras", 25);
+        lista.add(animal1);
+        lista.add(animal2);
+        lista.add(animal3);
+        do {
+            opciones(menu());
+        } while (true);
     }
 
     public static int menu() {
@@ -39,18 +48,19 @@ public class RegistroAnimales {
 
     public static void opciones(int opcion) {
 
-        if(opcion == 0)
+        if (opcion == 0) {
             System.exit(0);
-        else if(opcion == 1)
+        } else if (opcion == 1) {
             crearAnimal();
-        else if(opcion == 2)
+        } else if (opcion == 2) {
             eliminarAnimal();
-        else if(opcion == 3)
+        } else if (opcion == 3) {
             editarAnimal();
-        else if(opcion == 4)
+        } else if (opcion == 4) {
             alimentacion();
-        else if(opcion == 5)
+        } else if (opcion == 5) {
             tipoImpresion();
+        }
 
     }
 
@@ -91,7 +101,7 @@ public class RegistroAnimales {
         System.out.print("Vida: ");
         int vida = sc.nextInt();
         if (validarNombreCientifico(nombreCientifico) == true) {
-            lista.add(new Animal());
+            lista.add(new Animal(nombreCientifico,nombreComun,habitat,alimentacion,descripcionRasgos,distroGeografica,vida));
         }
     }
 
