@@ -9,6 +9,16 @@ package registroanimales;
  *
  * @author jcoq2
  */
-public class Animal {
+public class Animal 
+{
+    private String nombreCientifico;
+    private String nombreComun;
+    private String habitat;
+    private String alimentacion;
+    private String descripcionRasgos;
+    private String distribucionGeografica;
+    private int vida;//debe ser mayor a cero
+    
+    
     
 }

@@ -5,6 +5,8 @@
  */
 package registroanimales;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author jcoq2
@@ -16,6 +18,7 @@ public class RegistroAnimales {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        ArrayList<Animal> lista = new ArrayList();
     }
     
 }
