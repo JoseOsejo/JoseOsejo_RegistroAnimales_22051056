@@ -86,9 +86,11 @@ public class RegistroAnimales {
         String distroGeografica = sc.nextLine();
         System.out.print("Vida: ");
         int vida = sc.nextInt();
+        if(validarNombreCientifico(nombreCientifico) == true){
         lista.add(new Animal());
+        }
     }
-
+    
 
 
 }
