@@ -16,7 +16,7 @@ public class RegistroAnimales {
 
     public static ArrayList<Animal> lista = new ArrayList();
     public static Scanner sc = new Scanner(System.in);
-    //public static Animal animal = new Animal();
+    public static Animal animal = new Animal();
 
     /**
      * @param args the command line arguments
@@ -39,25 +39,19 @@ public class RegistroAnimales {
 
     public static void opciones(int opcion) {
 
-        /*
         if(opcion == 0)
             System.exit(0);
         else if(opcion == 1)
-            
+            crearAnimal();
         else if(opcion == 2)
-            
+            eliminarAnimal();
         else if(opcion == 3)
-           
+            editarAnimal();
         else if(opcion == 4)
-            
+            alimentacion();
         else if(opcion == 5)
-            
-        else if(opcion == 6)
-            
-        else if(opcion == 7)
-           
-        else if(opcion == 8)
-         */
+            tipoImpresion();
+
     }
 
     public static boolean validarNombreCientifico(String nombreCientifico) {
@@ -67,6 +61,18 @@ public class RegistroAnimales {
             }
         }
         return true;
+    }
+
+    public static void tipoImpresion() {
+        System.out.println("Indique tipo de impresion: \n1. Imprimir por posicion\nImprimir toda la lista\nImprimir solo nombresCientifico");
+        int opcion = sc.nextInt();
+        if (opcion == 1) {
+            imprimirAnimalPos();
+        } else if (opcion == 2) {
+            imprimirListaCompleta();
+        } else if (opcion == 3) {
+            imprimirNombreCientifico();
+        }
     }
 
     public static void crearAnimal() {
@@ -89,8 +95,10 @@ public class RegistroAnimales {
         }
     }
 
-    public static void eliminarAnimal(String nombreCientifico) {
+    public static void eliminarAnimal() {
 
+        System.out.println("Ingrese nombre: ");
+        String nombreCientifico = sc.next();
         for (Animal animal : lista) {
             int pos = lista.indexOf(nombreCientifico);
             lista.remove(pos);
@@ -115,14 +123,15 @@ public class RegistroAnimales {
         System.out.print("Posicion: ");
         System.out.println(lista.get(sc.nextInt()));
     }
-    
-    public static void imprimirListaCompleta(){
-       for(Animal animal: lista){
-           System.out.println(animal);
-       }
+
+    public static void imprimirListaCompleta() {
+        for (Animal animal : lista) {
+            System.out.println(animal);
+        }
     }
-    public static void imprimirNombreCientifico(){
-        for(Animal animal:lista){
+
+    public static void imprimirNombreCientifico() {
+        for (Animal animal : lista) {
             System.out.println(animal.getNombreCientifico());
         }
     }
@@ -160,9 +169,8 @@ public class RegistroAnimales {
             lista.get(pos).setVida(sc.nextInt());
         }
     }
-    
 
-    public static void editarAtributos(int pos){
+    public static void editarAtributos(int pos) {
         System.out.print("Nombre Cientifico: ");
         lista.get(pos).setNombreCientifico(sc.next());
         System.out.print("Nombre Comun: ");
@@ -179,4 +187,12 @@ public class RegistroAnimales {
         lista.get(pos).setVida(sc.nextInt());
     }
 
+    public static void alimentacion() {
+        System.out.println("Indique posicion de Animal para alimentar");
+        int posAnimalAlimentar = sc.nextInt();
+        System.out.println("Indique posicion de Animal a devorar");
+        int posAnimalDevorar = sc.nextInt();
+        lista.get(posAnimalAlimentar).vida += lista.get(posAnimalDevorar).vida;
+        lista.remove(posAnimalDevorar);
+    }
 }
