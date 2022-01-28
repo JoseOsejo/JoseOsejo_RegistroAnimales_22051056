@@ -97,7 +97,7 @@ public class RegistroAnimales {
         }
     }
 
-    public static void editarAlumno() {
+    public static void editarAnimal() {
         System.out.print("Ingrese la posicion: ");
         int pos = sc.nextInt();
         System.out.println("1. Un atributo");
@@ -114,6 +114,17 @@ public class RegistroAnimales {
     public static void imprimirAnimalPos() {
         System.out.print("Posicion: ");
         System.out.println(lista.get(sc.nextInt()));
+    }
+    
+    public static void imprimirListaCompleta(){
+       for(Animal animal: lista){
+           System.out.println(animal);
+       }
+    }
+    public static void imprimirNombreCientifico(){
+        for(Animal animal:lista){
+            System.out.println(animal.getNombreCientifico());
+        }
     }
 
     public static void editarUnAtributo(int pos) {
