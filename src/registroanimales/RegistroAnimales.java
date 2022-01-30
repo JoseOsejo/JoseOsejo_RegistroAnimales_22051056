@@ -74,7 +74,7 @@ public class RegistroAnimales {
     }
 
     public static void tipoImpresion() {
-        System.out.println("Indique tipo de impresion: \n1. Imprimir por posicion\nImprimir toda la lista\nImprimir solo nombresCientifico");
+        System.out.println("Indique tipo de impresion: \n1. Imprimir por posicion\n2.Imprimir toda la lista\n3.Imprimir solo nombresCientifico");
         int opcion = sc.nextInt();
         if (opcion == 1) {
             imprimirAnimalPos();
@@ -86,19 +86,19 @@ public class RegistroAnimales {
     }
 
     public static void crearAnimal() {
-        System.out.print("Nombre Cientifico: ");
-        String nombreCientifico = sc.nextLine();
-        System.out.print("Nombre Comun: ");
+        System.out.println("Nombre Cientifico: ");
+        String nombreCientifico = sc.next();
+        System.out.println("Nombre Comun: ");
         String nombreComun = sc.next();
-        System.out.print("Habitat: ");
+        System.out.println("Habitat: ");
         String habitat = sc.next();
-        System.out.print("alimentacion: ");
+        System.out.println("alimentacion: ");
         String alimentacion = sc.next();
-        System.out.print("Descripcion de Rasgos: ");
+        System.out.println("Descripcion de Rasgos: ");
         String descripcionRasgos = sc.nextLine();
-        System.out.print("Distribucion Geografica : ");
+        System.out.println("Distribucion Geografica : ");
         String distroGeografica = sc.nextLine();
-        System.out.print("Vida: ");
+        System.out.println("Vida: ");
         int vida = sc.nextInt();
         if (validarNombreCientifico(nombreCientifico) == true) {
             lista.add(new Animal(nombreCientifico,nombreComun,habitat,alimentacion,descripcionRasgos,distroGeografica,vida));
@@ -190,9 +190,9 @@ public class RegistroAnimales {
         System.out.println("Alimentacion: ");
         lista.get(pos).setAlimentacion(sc.next());
         System.out.print("Descripcion de Rasgos: ");
-        lista.get(pos).setDescripcionRasgos(sc.nextLine());
+        lista.get(pos).setDescripcionRasgos(sc.next());
         System.out.print("Distribucion Geografica: ");
-        lista.get(pos).setDistribucionGeografica(sc.nextLine());
+        lista.get(pos).setDistribucionGeografica(sc.next());
         System.out.println("Vida: ");
         lista.get(pos).setVida(sc.nextInt());
     }
